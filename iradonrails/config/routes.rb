@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  resource :artists
+  resources :artists
 end
