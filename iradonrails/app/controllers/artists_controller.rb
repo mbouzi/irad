@@ -1,6 +1,6 @@
 class ArtistsController < ApplicationController
   def index
-    @artists = ["me", "you", "other guy"]
+    @artists = Artist.all
   end
 
   def create
