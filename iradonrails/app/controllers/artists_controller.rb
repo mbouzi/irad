@@ -3,6 +3,9 @@ class ArtistsController < ApplicationController
     @artists = Artist.all
   end
 
+  def show
+  end
+
   def create
     #POST create a new artist
   end
