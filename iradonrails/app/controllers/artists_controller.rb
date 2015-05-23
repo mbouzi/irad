@@ -1,4 +1,8 @@
 class ArtistsController < ApplicationController
+  def index
+    @artists = ["me", "you", "other guy"]
+  end
+
   def create
     #POST create a new artist
   end
