@@ -8,11 +8,13 @@ class ArtistsController < ApplicationController
     @record_label = RecordLabel.find(params[:id])
   end
 
+  def new
+    @record_label = RecordLabel.new
+  end
+
   def create
   end
 
-  def new
-  end
 
   def edit
   end
