@@ -1,6 +1,7 @@
 class ArtistsController < ApplicationController
 
   def index
+    @record_labels = RecordLabel.all
   end
 
   def show
