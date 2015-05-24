@@ -1,0 +1,7 @@
+<p>label name: <%= @record_label.name %></p>
+<p>founding date: <%= @record_label.founding_date %></p>
+<h3>All Artists</h3>
+<% @record_label.artists.each do |artist| %>
+  <li> <%= link_to artist.stage_name, artist_path(artist) %> </li>
+<% end %>
+
