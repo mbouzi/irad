@@ -12,7 +12,7 @@ class ArtistsController < ApplicationController
   end
 
   def new
-    #GET a new artist form for user
+    @artist = Artist.new
   end
 
   def edit
