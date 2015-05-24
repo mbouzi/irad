@@ -5,6 +5,7 @@ class ArtistsController < ApplicationController
   end
 
   def show
+    @record_label = RecordLabel.find(params[:id])
   end
 
   def create
