@@ -8,8 +8,12 @@ class ArtistsController < ApplicationController
   end
 
   def create
-    #POST create a new artist
-    puts "THESE ARE THE ARTIST PARAMS: #{artist_params}"
+    artist = Artist.new(artist_params)
+    if artist.save
+      redirect_to artist_path(artist)
+    else
+      redirect_to new_artist_path
+    end
   end
 
   def new
