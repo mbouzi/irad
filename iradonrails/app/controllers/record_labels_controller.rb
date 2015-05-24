@@ -22,6 +22,9 @@ class ArtistsController < ApplicationController
   end
 
   def record_label_params
+    params.require(:record_label).permit(
+      :name,
+      :founding_date)
   end
 
 end
