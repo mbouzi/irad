@@ -19,10 +19,10 @@ class RecordLabelsController < ApplicationController
     else
       redirect_to new_record_label_path
     end
-
   end
 
   def edit
+    @record_label = RecordLabel.find(params[:id])
   end
 
   def update
