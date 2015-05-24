@@ -25,7 +25,12 @@ class ArtistsController < ApplicationController
   end
 
   def update
-    #POST edits to db
+    artist = Artist.find(params[:id])
+    if artist.update_attributes(artist_params)
+      redirect_to artist_path(artist)
+    else
+      redirect_to edit_artist_path(artist)
+    end
   end
 
   def destroy
@@ -35,9 +40,10 @@ class ArtistsController < ApplicationController
   end
 
   def artist_params
-    params.require(:artist).permit(:stage_name,
-                                   :birth_name,
-                                   :age,
-                                   :description)
+    params.require(:artist).permit(
+      :stage_name,
+      :birth_name,
+      :age,
+      :description)
   end
 end
