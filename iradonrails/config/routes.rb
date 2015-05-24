@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   resources :artists
-  resources :record_labels
+  resources :record_labels, path: 'recordlabels'
 
-  get '/recordlabels', to: 'record_labels#index'
 end
