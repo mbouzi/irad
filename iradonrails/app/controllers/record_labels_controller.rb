@@ -26,6 +26,12 @@ class RecordLabelsController < ApplicationController
   end
 
   def update
+    record_label = RecordLabel.find(params[:id])
+    if record_label.update_attributes(record_label_params)
+      redirect_to record_label_path(record_label)
+    else
+      redirect_to edit_record_label_path(record_label)
+    end
   end
 
   def destroy
