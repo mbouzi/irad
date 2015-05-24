@@ -16,7 +16,7 @@ class ArtistsController < ApplicationController
   end
 
   def edit
-    #GET an artist edit form for user
+    @artist = Artist.find(params[:id])
   end
 
   def update
