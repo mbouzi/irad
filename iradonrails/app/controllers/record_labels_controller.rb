@@ -1,4 +1,4 @@
-class ArtistsController < ApplicationController
+class RecordLabelsController < ApplicationController
 
   def index
     @record_labels = RecordLabel.all
@@ -13,8 +13,14 @@ class ArtistsController < ApplicationController
   end
 
   def create
-  end
+    record_label = RecordLabel.find_or_create_by(record_label_params)
+    if record_label.save
+      redirect_to record_label_path(record_label)
+    else
+      redirect_to new_record_label_path
+    end
 
+  end
 
   def edit
   end
