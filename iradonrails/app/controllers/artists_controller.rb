@@ -9,6 +9,7 @@ class ArtistsController < ApplicationController
 
   def create
     #POST create a new artist
+    puts "THESE ARE THE ARTIST PARAMS: #{artist_params}"
   end
 
   def new
@@ -25,5 +26,12 @@ class ArtistsController < ApplicationController
 
   def destroy
     #delete artist record
+  end
+
+  def artist_params
+    params.require(:artist).permit(:stage_name,
+                                   :birth_name,
+                                   :age,
+                                   :description)
   end
 end
