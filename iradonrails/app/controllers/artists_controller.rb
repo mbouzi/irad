@@ -29,7 +29,9 @@ class ArtistsController < ApplicationController
   end
 
   def destroy
-    #delete artist record
+    artist = Artist.find(params[:id])
+    artist.destroy
+    redirect_to artists_path
   end
 
   def artist_params
