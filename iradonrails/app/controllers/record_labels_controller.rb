@@ -35,6 +35,9 @@ class RecordLabelsController < ApplicationController
   end
 
   def destroy
+    record_label = RecordLabel.find(params[:id])
+    record_label.destroy
+    redirect_to record_labels_path
   end
 
   def record_label_params
