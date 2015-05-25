@@ -6,4 +6,8 @@ class Genre < ActiveRecord::Base
     self.name.downcase!
   end
 
+  def strip_whitespace
+    self.name.strip!
+  end
+
 end
