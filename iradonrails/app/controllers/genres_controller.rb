@@ -26,6 +26,12 @@ class GenresController < ApplicationController
   end
 
   def update
+    genre = Genre.find_or_create_by(genre_params)
+    if genre.save
+      redirect_to genre_path(genre)
+    else
+      redirect_to edit_genre_path
+    end
   end
 
   def destroy
