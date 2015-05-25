@@ -22,4 +22,10 @@ class GenresController < ApplicationController
   def destroy
   end
 
+  def genre_params
+    params.require(:genres).permit(
+      :name,
+      :description)
+  end
+
 end
