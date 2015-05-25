@@ -1,7 +1,7 @@
 class ArtistGenresController < ApplicationController
 
   def edit
-    puts "IN THE EDIT ACTION!"
+    @artist = Artist.find(params[:artist_id])
   end
 
   def update
