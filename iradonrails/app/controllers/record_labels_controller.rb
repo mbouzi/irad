@@ -45,5 +45,4 @@ class RecordLabelsController < ApplicationController
       :name,
       :founding_date)
   end
-
 end
