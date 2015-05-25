@@ -3,7 +3,7 @@ class Artist < ActiveRecord::Base
   has_many :artist_genres
   has_many :genres, through: :artist_genres
 
-  def all_artist_genres
+  def all_genres
     if self.genres.count < 1
       'add genres'
     else
