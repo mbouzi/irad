@@ -20,4 +20,11 @@ class SongsController < ApplicationController
   def destroy
   end
 
+  def songs_params
+    params.require(:song).permit(
+      :title,
+      :lyrics
+      )
+  end
+
 end
