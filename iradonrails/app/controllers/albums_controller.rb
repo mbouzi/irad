@@ -33,6 +33,12 @@ class AlbumsController < ApplicationController
     end
   end
 
+  def destroy
+    album = Album.find(params[:id])
+    album.destroy
+    redirect_to edit_artist_path(album.artist)
+  end
+
   def album_params
     params.require(:album).permit(
       :title,
