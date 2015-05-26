@@ -2,8 +2,9 @@ Rails.application.routes.draw do
 
   resources :artists do
     resource :artist_genres
-    resources :albums
-    resources :songs
+    resources :albums do
+      resources :songs
+    end
   end
 
   resources :record_labels, path: 'recordlabels'
