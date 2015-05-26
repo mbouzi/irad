@@ -25,6 +25,12 @@ class AlbumsController < ApplicationController
   end
 
   def update
+    album = Album.find(params[:id])
+    if album.update_attributes(album_params)
+      redirect_to artist_album_path(album.artist, album)
+    else
+      redirect_to edit_artist_album_path(album.artist, album)
+    end
   end
 
   def album_params
