@@ -11,6 +11,9 @@ class SongsController < ApplicationController
     @song = Song.new
   end
 
+  def create
+  end
+
   def edit
   end
 
@@ -20,7 +23,7 @@ class SongsController < ApplicationController
   def destroy
   end
 
-  def songs_params
+  def song_params
     params.require(:song).permit(
       :title,
       :lyrics
