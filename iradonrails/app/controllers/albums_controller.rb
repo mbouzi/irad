@@ -24,6 +24,9 @@ class AlbumsController < ApplicationController
     @album = Album.find(params[:id])
   end
 
+  def update
+  end
+
   def album_params
     params.require(:album).permit(
       :title,
