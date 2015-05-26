@@ -1,0 +1,6 @@
+<%= form_for @album, url: {action: "create"} do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label 'year released' %>
+  <%= select_year (Time.now) %>
+<% end %>
