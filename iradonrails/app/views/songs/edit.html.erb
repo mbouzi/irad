@@ -1,0 +1,7 @@
+<%= form_for @song, url:{action: "update"} do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :lyrics %>
+  <%= f.text_field :lyrics %>
+<% end %>
+<%= link_to 'Delete Song', artist_album_song_path, method: :delete %>
