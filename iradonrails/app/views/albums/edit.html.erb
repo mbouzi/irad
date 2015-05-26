@@ -1,1 +1,3 @@
-<%= @album.title %>
+<%= form_for @album, url: {action: "update"} do |f| %>
+  <%= f.label :title %>
+<% end %>
