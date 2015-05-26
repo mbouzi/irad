@@ -25,7 +25,12 @@ class SongsController < ApplicationController
   end
 
   def update
-
+    song = Song.find(params[:id])
+    if song.update_attributes(song_params)
+      redirect_to artist_album_song_path(song.artist, song.album, song)
+    else
+      redirect_to edit_artist_album_song_path(song.artist, song.album, song)
+    end
   end
 
   def destroy
