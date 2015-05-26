@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150526164354) do
+ActiveRecord::Schema.define(version: 20150526183303) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,5 +60,17 @@ ActiveRecord::Schema.define(version: 20150526164354) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
+
+  create_table "songs", force: :cascade do |t|
+    t.integer  "artist_id",              null: false
+    t.integer  "album_id",               null: false
+    t.string   "title",      limit: 256, null: false
+    t.text     "lyrics"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "songs", ["album_id"], name: "index_songs_on_album_id", using: :btree
+  add_index "songs", ["artist_id"], name: "index_songs_on_artist_id", using: :btree
 
 end
