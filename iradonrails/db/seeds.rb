@@ -4,6 +4,10 @@ require 'faker'
   RecordLabel.create(name: "#{Faker::Company.name} Records", founding_date: "#{Faker::Date.backward(1000)}")
 end
 
+10.times do
+  Genre.create(name: Faker::Commerce.department, description: Faker::Lorem.paragraph)
+end
+
 
 artists = [
   {stage_name: 'Jimi Hendrix', birth_name: "#{Faker::Name.first_name} #{Faker::Name.last_name}", age: rand(20..98), record_label: RecordLabel.all.sample, description: Faker::Lorem.paragraph(2) },
@@ -38,5 +42,14 @@ artists = [
 ]
 
 artists.each do |artist_info|
-  Artist.create(artist_info)
+  artist = Artist.create(artist_info)
+  5.times do
+    album = artist.albums.create(title: Faker::Company.catch_phrase, release_year: "#{rand(1950..2015)}", description: Faker::Lorem.paragraph)
+    8.times do
+      album.songs.create(artist: artist, title: Faker::Company.bs, lyrics: Faker::Lorem.paragraph)
+    end
+  end
+  4.times do
+    artist.genres << Genre.all.sample
+  end
 end
